@@ -17,6 +17,12 @@ public class TestSuit extends BaseTest{
      EmailWindowsPro8 emailWindowsPro8 = new EmailWindowsPro8();
      VoteResult voteResult = new VoteResult();
      ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
+     NikeProductPage nikeProductPage = new NikeProductPage();
+     NewRealeasePage newRealeasePage = new NewRealeasePage();
+     FaceBookPage faceBookPage = new FaceBookPage();
+     WelcomeSignPage welcomeSignPage = new WelcomeSignPage();
+     BillingCheckOutPage billingCheckOutPage = new BillingCheckOutPage();
+     CheckOutPage checkOutPage = new CheckOutPage();
 
     @Test
 public void verifyusershouldBeRegisterSuccessfully(){
@@ -24,7 +30,9 @@ public void verifyusershouldBeRegisterSuccessfully(){
         homePage.clickOnRegisterButton();
         //fill in registetion detail
         registerPage.FillinRegistrationDetails();
-        registerRsultPage.verfyUserResisteredSuccessfully();}
+        registerRsultPage.verfyUserResisteredSuccessfully();
+//        homePage. printProductNames();
+    }
     @Test
 
     public void veryfyusershould(){
@@ -69,7 +77,56 @@ public void verifyusershouldBeRegisterSuccessfully(){
         logInPage.VeryfyUserShaouldClick();
         logInPage.VeryfyingUserShoulloginsuccessFully();
         homePage.DoVoteButton();
-        voteResult.VeryfyingUserShoulVote();}}
+        voteResult.VeryfyingUserShoulVote();}
+    @Test
+    public void messageWillCome(){
+        homePage.ClickOnSearchButton();
+    }
+    @Test
+    public void UserShouldAbleToPrintOutAllThelist(){
+        homePage.printProductNames();
+    }
+    @Test
+    public void ToVerifyUserShouldAbleToChangeCurrency(){
+          homePage.clickoncurrencyButtonDoller();
+          homePage.clickCurrencyButtonEuro();
+
+    }
+    @Test
+    public void ToverifyVoteMssageShoulApear(){
+        homePage.clickOnVoteButton();
+        homePage.MessageShouldApearForVote();
+    }
+    @Test
+    public void ToVeryfiUserShouldSearchIteam(){
+        homePage.SearchIteamAccordingli();
+        nikeProductPage.AllTheNikeProduct();
+    }
+    @Test
+    public void ToVerifyUserShouldNewReleaseDetail(){
+        homePage.nopCommercenewRealease();
+        newRealeasePage.FillInTheDetails();
+        newRealeasePage.verifyUserAddCommentSuccessfully();
+        newRealeasePage.verifyLasttimeMessageShouldPrint();
+    }
+    @Test
+    public void ToverifyUserShouldableToLogInFaceBook(){
+        homePage.UserShouldAbleToclickOnfacebook();
+        faceBookPage.verifyingFacebookPage();
+    }
+    @Test
+    public void ToverifyUserShouldAbleToOrderSuccessfulyComputer(){
+        homePage.BuildYourComputer();
+        computerPage.BUildYourComputer();
+        shoppingCartPage.CheckOutProcess();
+        welcomeSignPage.CheckOutAsGuest();
+        billingCheckOutPage.shipingAddressDetails();
+        checkOutPage.CheckOutComputer();
+        checkOutPage.verfyUserShouldOrderSuccessfully();
+
+    }
+}
+
 
 
 

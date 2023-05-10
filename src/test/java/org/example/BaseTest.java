@@ -12,4 +12,5 @@ public class BaseTest extends Utils {
     driverManager.closeBrowser();
     }
 
+
 }//only strt and end method
